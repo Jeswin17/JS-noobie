@@ -1,0 +1,90 @@
+<html>
+ 
+<head>
+    <title>Calulator using Callback Functions</title>
+</head>
+ 
+<body>
+    <div id="wrapper">
+    <div id="start"></div>How many players?
+    <input type="number" id="players" min="1" max="5" value="69">
+    
+    <button id="btnDeal" type="button" onClick="startDeal()">Deal</button>
+    <div id="message"></div>       
+           
+     </div>
+    <script>
+        var output = document.getElementById("output");
+        var suits =["spades","clubs","hearts","diams"];
+        var cardface =["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+        var cards =[];
+        var players =[];
+        
+        function startDeal(){
+            players = [];
+            cards = [];
+            
+            var num = Number(document.getElementById("players").value);
+            
+            for(i=0;i<num;i++){
+                players[i] = []; //creating a LIST within A LIST 
+                
+            }
+            buildCards();
+            shuffleArray(cards);
+            deal(cards);
+        }
+        
+        function deal(c) {
+            var num = players.length;
+            var message = document.getElementById("message");
+            var p = 0;
+            for (var i = 0; i < c.length; i++) {
+                players[p].push(c[i]);
+                p++;
+                if (p >= num) {
+                    p = 0;
+                }
+            }
+            for (var x = 0; x < num; x++) {
+                message.innerHTML += "<BR>Player : " + (x + 1) + "<br>";
+                for (var i = 0; i < players[x].length; i++) {
+                    message.innerHTML += "<span style=\"color:" + players[x][i].bgcolor + "\">" + players[x][i].num + "&" + players[x][i].suit + "; </span>";
+                }
+                message.innerHTML += "<BR>";
+            }
+        }
+        
+        function buildCards(){
+            cards = [];
+            for(s in suits ){
+                var suitNew = suits[s][0].toUpperCase();
+                var bgcolor = suitNew == "H"||suitNew == "D" ? "red":"black" ;
+                for(n in cardface){
+                var card = {
+                suit: suits[s]
+                ,num: cardface[n]
+                ,bgcolor : bgcolor
+                , icon : suitNew
+                }
+            cards.push(card);
+                }
+        
+            }
+        }
+        
+        function shuffleArray(array) {
+            for (var x = array.length - 1; x > 0; x--) {
+                var ii = Math.floor(Math.random() * (x + 1));
+                var temp = array[x];
+                array[x] = array[ii];
+                array[ii] = temp;
+            }
+            return array;
+        }
+        
+        
+    </script>
+</body>
+ 
+</html>

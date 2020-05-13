@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+        .con {
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 0.8em;
+            display: none;
+        }
+        
+        .acc {
+            background-color: red;
+            font-size: 1.5em;
+            color: #ddd;
+        }
+        
+        #one,
+        #two,
+        #three {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+        
+        .active {
+            display: block;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="acc" >Info abt JS </div>
+    <div class="con">completecomplete js coursecomplete js coursecomplete js coursecomplete js coursecomplete js coursecomplete js course js coursecomplete js coursecomplete js coursecomplete js coursecomplete js coursecomplete js coursecomplete js coursecomplete js coursecomplete js course<img src="http://via.placeholder.com/350x150?text=image1"></div>
+    <div class="acc" >Info abt JS </div>
+    <div class="con">more info about jsmore info about js more  
+    <img src="http://via.placeholder.com/350x150?text=image2"></div>
+    <script>
+        
+        var actitle = document.querySelectorAll('.acc');
+        var ccon = document.querySelectorAll('.con');
+        for(var x=0;x<actitle.length;x++)
+            {
+            actitle[x].onclick = function(){
+                cCon(this.nextElementSibling); this.nextElementSibling.classList.toggle("active");
+                }
+            }
+        
+        function cCon(t){
+            
+            for(var x=0;x<ccon.length;x++){
+                
+                if(t!=ccon[x])
+                    {
+                        ccon[x].classList.remove('active');
+                    }
+            }
+        }
+        
+    </script>
+    
+</body>
+
+</html>

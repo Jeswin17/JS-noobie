@@ -1,0 +1,52 @@
+<html>
+ 
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+        .toggle {
+            padding: 10px;
+            background-color: aliceblue;
+            font-size: 1.3em;
+            margin: 10px;
+        }
+        
+        .active {
+            background-color: aquamarine;
+            color: white;
+        } 
+    </style>
+</head>
+ 
+<body>
+    <div>Party invite Checklist</div>
+    <div id="output">Complete JavaScript Course </div> Guest Name :
+    <input type="text" id="guestName"> +
+    <input type="number" id="guestNum" value="0">
+    <input type="button" value="add">
+    <script src="json.json"></script>
+    <script>
+        var party = JSON.parse(data);
+        var output = document.getElementById('output');
+        var addGuest = document.querySelector('input[type="button"]');
+        addGuest.addEventListener('click', function (e) {
+            var g = document.getElementById('guestName');
+            var n = document.getElementById('guestNum');
+            message('?', g.value + ' +' + n.value, party.length);
+            party.push({
+                name: g.value
+                , guests: Number(n.value)
+                , status: false
+            })
+            g.value = "";
+            n.value = 0;
+        })
+ 
+        function buildList() {}
+ 
+        function message(m, person, id) {
+            output.innerHTML += '<div class="toggle" data-id="' + id + '" data-person="' + person + '" >' + m + ' ' + person + ' </div>';
+        }
+    </script>
+</body>
+ 
+</html>

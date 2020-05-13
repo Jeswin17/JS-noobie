@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="message">Complete JavaScript Course</div>
+    <div id="message1"></div>
+    <input type="text" id="myString">
+    <input type="button" value="guess" onclick="rguess()">
+    <script>
+            var msg = document.getElementById('message');
+            var myarr =["js","hello","hi"];
+            window.onload = sword;
+            var randomWord;
+        
+    function sword(){
+        
+        var w = myarr[Math.floor(Math.random()*myarr.length)];
+        randomWord = w;
+        w = w.toLowerCase();
+        
+        var s="";
+        var wlength = w.length;
+        for(var x=0;x<wlength;x++)
+            {
+                var i = Math.floor(Math.random()*w.length);
+                s+=w[i];
+                w=w.substr(0,i) + w.substr(i+1);
+            }
+        //random item from the array 
+        
+         message.innerHTML = s;
+        
+    }    
+        
+        
+        
+        
+    function rguess(){
+        //check to see if correct
+         var guess = document.getElementById('myString').value;
+            if (guess.toLowerCase() == randomWord.toLowerCase()) {
+                message1.innerHTML = 'Correct';
+            }
+            else {
+                message1.innerHTML = 'Wrong it was ' + randomWord;
+            }
+            sword();
+            //check to see if correct
+    }
+    
+    
+    
+    </script>
+</body>
+
+</html>

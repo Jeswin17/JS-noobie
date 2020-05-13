@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Complete JavaScript Course</title>
+   
+</head>
+
+<body>
+    <div id="msg">complete JS course</div>
+    <input type="button" value="pop" onclick="popup()">
+    <input type="button" value="pop" onclick="popupclose()">
+    
+    <script>
+        
+        function popup(){
+            
+            var url = "https://www.google.com/";
+            var opt = "top=0,left=100,width=200,height=200";
+            wn=window.open(url,"_blank_",opt);
+            
+        }
+        function popupclose(){
+            wn.close();
+        }    
+    </script>
+</body>
+
+</html>

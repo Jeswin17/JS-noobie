@@ -1,0 +1,58 @@
+<html>
+<head>
+    
+    <title>JS course</title>
+    </head>
+
+<body>
+    <div id="wrapper">
+    
+    </div>
+    
+    <script>
+    
+    var output = document.getElementById("wrapper");
+    console.dir(window);
+    
+    for(var prop in window){
+        //document.write(prop + "" + window[prop] + "<br>" );
+        if(prop == "innerHeight")
+            var inner = prop + "" +window[prop] + "<br>" ;
+        if(prop == "innerWidth")
+            var wid = prop + "" +window[prop] + "<br>" ;
+        
+    }
+        
+        //output.innerHTML = inner + wid ;
+        output.innerHTML += window.innerHeight + "" + window.innerWidth ;
+        
+        output.innerHTML += window.location;
+    
+    </script>
+    
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

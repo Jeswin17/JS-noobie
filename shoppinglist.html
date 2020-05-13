@@ -1,0 +1,62 @@
+<html>
+<body>
+    <div id="msg">js course</div>
+    <div>
+        <input type="text" id="additem">
+        <input type="button" id="addnew" value="add friend">
+    </div>
+    <div id="output">
+        <h1>Shopping List</h1>
+        <ol id="slist">
+    
+    
+    
+        
+        </ol>
+    
+    </div>
+    <script>
+    
+    document.getElementById('addnew').onclick = function(){
+    
+        addclick();
+    }
+    
+    
+    
+    function addclick(){
+        
+        var a = document.getElementById('additem').value;
+        var li = document.createElement('li');
+        li.appendChild(document.createTextNode(a));
+        document.getElementById('slist').appendChild(li);
+        console.log("clicked");
+    }
+    
+    
+    
+    
+    </script>
+    
+    
+    
+    
+    
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
